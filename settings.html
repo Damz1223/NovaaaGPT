@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
+
+<title>NovaGPT Settings</title>
+
+<link
+rel="stylesheet"
+href="settings.css"
+/>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet"
+/>
+
+</head>
+
+<body>
+
+<div class="settings-page">
+
+    <div class="settings-topbar">
+
+        <button
+        class="back-btn"
+        onclick="goBack()"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </button>
+
+        <h1>
+            Settings
+        </h1>
+
+    </div>
+
+    <div class="settings-wrapper">
+
+        <div
+        class="settings-box"
+        id="appearance-box"
+        >
+
+            <div class="accent-top">
+
+                <div class="settings-left">
+
+                    <div class="settings-icon">
+
+                        <i class="fa-regular fa-sun"></i>
+
+                    </div>
+
+                    <div class="settings-info">
+
+                        <h2>
+                            Penampilan
+                        </h2>
+
+                        <p id="theme-text">
+                            System (Default)
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="accent-wrapper">
+
+                <button
+                class="accent-toggle"
+                onclick="toggleThemeDropdown(event)"
+                >
+
+                    Pilih Tema
+
+                    <i
+                    class="fa-solid fa-chevron-down"
+                    id="theme-arrow"
+                    ></i>
+
+                </button>
+
+                <div
+                class="accent-dropdown"
+                id="theme-dropdown"
+                >
+
+                    <div
+                    class="dropdown-theme"
+                    onclick="setTheme('system')"
+                    >
+
+                        System (Default)
+
+                    </div>
+
+                    <div
+                    class="dropdown-theme"
+                    onclick="setTheme('light')"
+                    >
+
+                        Light
+
+                    </div>
+
+                    <div
+                    class="dropdown-theme"
+                    onclick="setTheme('dark')"
+                    >
+
+                        Dark
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+        class="settings-box"
+        id="accent-box"
+        >
+
+            <div class="accent-top">
+
+                <div class="settings-left">
+
+                    <div class="settings-icon">
+
+                        <i class="fa-solid fa-palette"></i>
+
+                    </div>
+
+                    <div class="settings-info">
+
+                        <h2>
+                            Warna aksen
+                        </h2>
+
+                        <p>
+                            Default
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="accent-wrapper">
+
+                <button
+                class="accent-toggle"
+                onclick="toggleAccentDropdown(event)"
+                >
+
+                    Pilih Warna
+
+                    <i
+                    class="fa-solid fa-chevron-down"
+                    id="accent-arrow"
+                    ></i>
+
+                </button>
+
+                <div
+                class="accent-dropdown"
+                id="accent-dropdown"
+                >
+
+                    <div
+                    class="accent-color blue"
+                    data-primary="#6366f1"
+                    data-secondary="#4f46e5"
+                    ></div>
+
+                    <div
+                    class="accent-color red"
+                    data-primary="#ef4444"
+                    data-secondary="#dc2626"
+                    ></div>
+
+                    <div
+                    class="accent-color green"
+                    data-primary="#22c55e"
+                    data-secondary="#16a34a"
+                    ></div>
+
+                    <div
+                    class="accent-color pink"
+                    data-primary="#ec4899"
+                    data-secondary="#db2777"
+                    ></div>
+
+                    <div
+                    class="accent-color orange"
+                    data-primary="#f97316"
+                    data-secondary="#ea580c"
+                    ></div>
+
+                    <div
+                    class="accent-color cyan"
+                    data-primary="#06b6d4"
+                    data-secondary="#0891b2"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+        class="settings-box"
+        id="data-box"
+        onclick="openDataPage()"
+        >
+
+            <div class="settings-left">
+
+                <div class="settings-icon">
+
+                    <i class="fa-solid fa-database"></i>
+
+                </div>
+
+                <div class="settings-info">
+
+                    <h2>
+                        Kelola Data
+                    </h2>
+
+                    <p>
+                        Open saved chats and data
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+        class="settings-box"
+        id="personalization-box"
+        >
+
+            <div class="settings-left">
+
+                <div class="settings-icon">
+
+                    <i class="fa-regular fa-face-smile"></i>
+
+                </div>
+
+                <div class="settings-info">
+
+                    <h2>
+                        Personalisasi
+                    </h2>
+
+                    <p>
+                        Customize NovaGPT
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+        class="settings-box"
+        id="report-box"
+        >
+
+            <div class="settings-left">
+
+                <div class="settings-icon">
+
+                    <i class="fa-brands fa-reddit-alien"></i>
+
+                </div>
+
+                <div class="settings-info">
+
+                    <h2>
+                        Laporkan bug
+                    </h2>
+
+                    <p>
+                        Send feedback and issue report
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+        class="settings-box"
+        id="about-box"
+        >
+
+            <div class="settings-left">
+
+                <div class="settings-icon">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                </div>
+
+                <div class="settings-info">
+
+                    <h2>
+                        Tentang
+                    </h2>
+
+                    <p>
+                        NovaGPT Beta v1.0
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="settings.js"></script>
+
+</body>
+</html>

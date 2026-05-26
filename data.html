@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
+
+<title>NovaGPT Data</title>
+
+<link
+rel="stylesheet"
+href="data.css"
+/>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet"
+/>
+
+</head>
+
+<body>
+
+<div class="data-page">
+
+    <div class="topbar">
+
+        <button
+        class="back-btn"
+        onclick="goBack()"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </button>
+
+        <h1>
+            Data
+        </h1>
+
+    </div>
+
+    <div class="data-wrapper">
+
+        <div class="data-box">
+
+            <div class="data-left">
+
+                <div class="data-icon">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                </div>
+
+                <div class="data-info">
+
+                    <h2>
+                        Perbaiki Model Setiap Orang
+                    </h2>
+
+                    <p>
+                        Improve model personalization
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+            class="switch"
+            id="model-switch"
+            onclick="toggleSwitch()"
+            >
+
+                <div
+                class="switch-circle"
+                id="switch-circle"
+                ></div>
+
+            </div>
+
+        </div>
+
+        <div
+        class="data-box delete-box"
+        onclick="openDeleteModal()"
+        >
+
+            <div class="data-left">
+
+                <div class="data-icon delete-icon">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                </div>
+
+                <div class="data-info">
+
+                    <h2>
+                        Hapus Riwayat Obrolan
+                    </h2>
+
+                    <p>
+                        Delete all saved chats
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+class="modal"
+id="delete-modal"
+>
+
+    <div class="modal-content">
+
+        <h2>
+            Kamu Yakin Ingin Menghapus Riwayat Obrolan
+        </h2>
+
+        <div class="modal-buttons">
+
+            <button
+            class="cancel-btn"
+            onclick="closeDeleteModal()"
+            >
+
+                Tidak
+
+            </button>
+
+            <button
+            class="delete-btn"
+            onclick="deleteChats()"
+            >
+
+                Hapus
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="data.js"></script>
+
+</body>
+</html>

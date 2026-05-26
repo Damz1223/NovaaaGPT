@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
+
+<title>NovaGPT Premium</title>
+
+<link
+rel="stylesheet"
+href="pro.css"
+/>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet"
+/>
+
+</head>
+
+<body>
+
+<div class="premium-page">
+
+    <div class="premium-topbar">
+
+        <button
+        class="back-btn"
+        onclick="goBack()"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </button>
+
+        <h1>
+            NovaGPT Premium
+        </h1>
+
+    </div>
+
+    <div class="plans-scroll">
+
+        <div class="plans-container">
+
+            <div class="plan-card free-plan">
+
+                <div class="plan-icon free-icon">
+
+                    <img
+        src="img/free.png"
+        alt="GO"
+        >
+
+                </div>
+
+                <h2>
+                    Free
+                </h2>
+
+                <p class="plan-desc">
+
+                    Basic AI access for everyone
+
+                </p>
+
+                <div class="premium-features">
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        <span>
+                            Basic AI Access
+                        </span>
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        <span>
+                            Limited Chats
+                        </span>
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        <span>
+                            NovaGPT Ultra Locked
+                        </span>
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        <span>
+                            No Premium Theme
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <button
+                class="plan-btn free-btn"
+                >
+
+                    FREE
+
+                </button>
+
+            </div>
+
+           <div class="plan-card go-plan">
+
+    <div class="plan-icon go-icon">
+
+        <img
+        src="img/go.png"
+        alt="GO"
+        >
+
+    </div>
+
+    <h2>
+        NovaGPT Go
+    </h2>
+
+    <p class="plan-desc">
+
+        Faster and smoother AI experience
+
+    </p>
+
+    <div class="price">
+
+        Rp49K
+
+        <span>
+            /bulan
+        </span>
+
+    </div>
+
+    <div class="premium-features">
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Faster Response
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Unlimited Chat
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Premium Theme
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Better AI Memory
+            </span>
+
+        </div>
+
+    </div>
+
+    <button
+    class="plan-btn go-btn"
+    onclick="buyPlan('GO')"
+    >
+
+        Upgrade Go
+
+    </button>
+
+</div>
+
+<div class="plan-card pro-plan">
+
+    <div class="plan-icon pro-icon">
+
+        <img
+        src="img/pro.png"
+        alt="PRO"
+        >
+
+    </div>
+
+    <h2>
+        NovaGPT Pro
+    </h2>
+
+    <p class="plan-desc">
+
+        Advanced AI for productivity
+
+    </p>
+
+    <div class="price">
+
+        Rp99K
+
+        <span>
+            /bulan
+        </span>
+
+    </div>
+
+    <div class="premium-features">
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                NovaGPT 2.5 Access
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Advanced Coding AI
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Memory AI
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Faster Servers
+            </span>
+
+        </div>
+
+    </div>
+
+    <button
+    class="plan-btn pro-btn"
+    onclick="buyPlan('PRO')"
+    >
+
+        Upgrade Pro
+
+    </button>
+
+</div>
+
+<div class="plan-card plus-plan">
+
+    <div class="plan-icon plus-icon">
+
+        <img
+        src="img/plus.png"
+        alt="PLUS"
+        >
+
+    </div>
+
+    <h2>
+        NovaGPT Plus
+    </h2>
+
+    <p class="plan-desc">
+
+        Creative and visual AI tools
+
+    </p>
+
+    <div class="price">
+
+        Rp149K
+
+        <span>
+            /bulan
+        </span>
+
+    </div>
+
+    <div class="premium-features">
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                AI Image Generation
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Cloud Sync
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Priority Access
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Exclusive Theme
+            </span>
+
+        </div>
+
+    </div>
+
+    <button
+    class="plan-btn plus-btn"
+    onclick="buyPlan('PLUS')"
+    >
+
+        Upgrade Plus
+
+    </button>
+
+</div>
+
+<div class="plan-card ultra-plan">
+
+    <div class="plan-icon ultra-icon">
+
+        <img
+        src="img/ultra.png"
+        alt="ULTRA"
+        >
+
+    </div>
+
+    <h2>
+        NovaGPT Ultra
+    </h2>
+
+    <p class="plan-desc">
+
+        Ultimate unlimited AI power
+
+    </p>
+
+    <div class="price">
+
+        Rp249K
+
+        <span>
+            /bulan
+        </span>
+
+    </div>
+
+    <div class="premium-features">
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                All Features Unlocked
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Ultra Fast AI
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Unlimited Everything
+            </span>
+
+        </div>
+
+        <div class="feature-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                VIP Priority Access
+            </span>
+
+        </div>
+
+    </div>
+
+    <button
+    class="plan-btn ultra-btn"
+    onclick="buyPlan('ULTRA')"
+    >
+
+        Upgrade Ultra
+
+    </button>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="pro.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
+
+<title>NovaGPT</title>
+
+<link
+rel="stylesheet"
+href="nova.css"
+/>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+/>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+/>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Inter:wght@400;500;600;700&display=swap"
+rel="stylesheet"
+/>
+
+</head>
+
+<body>
+
+<div
+class="sidebar hide"
+id="sidebar"
+>
+
+    <div class="sidebar-header">
+
+        <div class="logo-box">
+
+            <div class="logo">
+
+                <img
+id="logo-image"
+src="img/novagpt.png"
+alt="NovaGPT"
+>
+
+            </div>
+
+            <div class="logo-text">
+
+                <h2>
+                    NovaGPT
+                </h2>
+
+                <p>
+                    AI Beta v1.0
+                </p>
+
+            </div>
+
+        </div>
+
+        <button
+        class="icon-btn"
+        onclick="toggleSidebar()"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+    <div class="sidebar-menu">
+
+        <button
+        class="menu-item active"
+        onclick="newChat()"
+        >
+
+            <i class="fa-brands fa-rocketchat"></i>
+
+            <span>
+                New chat
+            </span>
+
+        </button>
+
+        <button
+        class="menu-item premium-menu"
+        onclick="openPremium()"
+        >
+
+            <i class="fa-solid fa-crown"></i>
+
+            <span>
+                Langganan
+            </span>
+
+        </button>
+
+        <button
+        class="menu-item"
+        onclick="openSettings()"
+        >
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>
+                Settings
+            </span>
+
+        </button>
+
+        <div
+        class="history-list"
+        id="history-list"
+        ></div>
+
+    </div>
+
+</div>
+
+<div class="main">
+
+    <div class="topbar">
+
+        <button
+        class="icon-btn"
+        onclick="toggleSidebar()"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+        <div class="model-dropdown">
+
+            <button
+            class="model-btn"
+            onclick="toggleModelMenu()"
+            >
+
+                <span id="selected-model">
+
+                    NovaGPT 1.5
+
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+            <div
+            class="model-menu"
+            id="model-menu"
+            >
+
+                <div
+                class="model-item active-model"
+                onclick="selectModel(this,'NovaGPT 1.5')"
+                >
+
+                    <h4>
+                        NovaGPT 1.5
+                    </h4>
+
+                    <p>
+                        Fast and lightweight AI model
+                    </p>
+
+                </div>
+
+                <div
+                class="model-item premium-model"
+                onclick="selectModel(this,'NovaGPT 2.5')"
+                >
+
+                    <div class="premium-lock">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                        <span>
+                            GO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        NovaGPT 2.5
+                    </h4>
+
+                    <p>
+                        Advanced smart reasoning model
+                    </p>
+
+                </div>
+
+                <div
+                class="model-item premium-model"
+                onclick="selectModel(this,'NovaGPT 3.5')"
+                >
+
+                    <div class="premium-lock pro-lock">
+
+                        <i class="fa-solid fa-crown"></i>
+
+                        <span>
+                            PRO
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        NovaGPT 3.5
+                    </h4>
+
+                    <p>
+                        Premium reasoning AI model
+                    </p>
+
+                </div>
+
+                <div
+                class="model-item premium-model"
+                onclick="selectModel(this,'NovaGPT Codex')"
+                >
+
+                    <div class="premium-lock ultra-lock">
+
+                        <i class="fa-solid fa-gem"></i>
+
+                        <span>
+                            ULTRA
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        NovaGPT Codex
+                    </h4>
+
+                    <p>
+                        Ultra coding AI model
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="topbar-right">
+
+            <div class="status"></div>
+
+            <span>
+                Online
+            </span>
+
+        </div>
+
+    </div>
+
+    <div
+    class="chat-box"
+    id="chat-box"
+    >
+
+        <div class="message ai">
+
+            <div class="bubble bubble-ai">
+
+                Halo 👋 saya
+                <strong>NovaGPT</strong>
+
+                <br><br>
+
+                Ada yang bisa saya bantu hari ini?
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="input-area">
+
+        <input
+        type="text"
+        id="user-input"
+        placeholder="Tulis pesan..."
+        autocomplete="off"
+        onkeypress="handleKeyPress(event)"
+        >
+
+        <button
+        class="send-btn"
+        onclick="sendMessage()"
+        >
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="nova.js"></script>
+
+</body>
+</html>
